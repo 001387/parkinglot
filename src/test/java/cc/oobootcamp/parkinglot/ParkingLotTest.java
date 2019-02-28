@@ -113,10 +113,43 @@ public class ParkingLotTest {
 		parkingLots.add(parkingLotC);
 		Car car = new Car();
 		SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
-		
 		Ticket ticket = superParkingBoy.parking(car);
 		Car extractcar = superParkingBoy.takeCar(ticket);
 		assertEquals(car, extractcar);
 		assertSame(car, extractcar);
+	}
+	
+	@Test
+	public void parking_manager_should_manage_boys_and_parking_car() {
+		int restSpaceOfParkingLotA = 2;
+		int restSpaceOfParkingLotB = 5;
+		int restSpaceOfParkingLotC = 8;
+		int allSpace = 10;
+		ParkingLot parkingLotA = new ParkingLot(allSpace, restSpaceOfParkingLotA);
+		ParkingLot parkingLotB = new ParkingLot(allSpace, restSpaceOfParkingLotB);
+		ParkingLot parkingLotC = new ParkingLot(allSpace, restSpaceOfParkingLotC);
+		List<ParkingLot> parkingLots = new ArrayList<ParkingLot>();
+		parkingLots.add(parkingLotA);
+		parkingLots.add(parkingLotB);
+		parkingLots.add(parkingLotC);
+		ParkingBoy graduateParkingBoy = new GraduateParkingBoy(parkingLots);
+		
+		ParkingBoy smartParkingBoy= new SmartParkingBoy(parkingLots);
+		ParkingBoy superParkingBoy= new SuperParkingBoy(parkingLots);
+		List<ParkingBoy> ParkingBoys = new ArrayList<ParkingBoy>();
+		ParkingBoys.add(graduateParkingBoy);
+		ParkingBoys.add(smartParkingBoy);
+		ParkingBoys.add(superParkingBoy);
+		
+		ParkingManager parkingManager = new ParkingManager(parkingLots, ParkingBoys);
+		Car car = new Car();
+		Ticket ticket = parkingManager.parking(car);
+		Car parkedCar = parkingManager.takeCar(ticket);
+		
+		ticket = parkingManager.parkingBoyPark(car);
+		parkedCar = parkingManager.parkingBoyTakeCar(ticket);
+		
+		assertEquals(car, parkedCar);
+		assertSame(car, parkedCar);
 	}
 }

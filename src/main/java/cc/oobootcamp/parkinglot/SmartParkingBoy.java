@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SmartParkingBoy {
-	private Map<Ticket,ParkingLot> parkedCars = new HashMap<Ticket, ParkingLot>();
-	private List<ParkingLot> parkingLots;
+public class SmartParkingBoy extends ParkingBoy {
+	protected Map<Ticket,ParkingLot> parkedCars = new HashMap<Ticket, ParkingLot>();
+	protected List<ParkingLot> parkingLots;
 	
 	public SmartParkingBoy(List<ParkingLot> parkingLots) {
 		this.parkingLots = parkingLots;

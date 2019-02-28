@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GraduateParkingBoy {
-	List<ParkingLot> parkingLots;
+public class GraduateParkingBoy extends ParkingBoy{
+	private List<ParkingLot> parkingLots;
 	private Map<Ticket,ParkingLot> parkedCars = new HashMap<Ticket, ParkingLot>();
 	
 	public GraduateParkingBoy(List<ParkingLot> parkingLots) {

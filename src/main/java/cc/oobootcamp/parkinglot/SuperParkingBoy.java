@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SuperParkingBoy {
+public class SuperParkingBoy extends ParkingBoy {
 
 	private List<ParkingLot> parkingLots;
 	private Map<Ticket, ParkingLot> boyParkedCars = new HashMap<Ticket, ParkingLot>();
