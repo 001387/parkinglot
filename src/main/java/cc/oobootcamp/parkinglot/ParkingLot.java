@@ -50,4 +50,14 @@ public class ParkingLot {
 			return true;
 		}
 	}
+
+	public double getVacancy() {
+		double vacancy = 0.0;
+		if(allSpace < 1) {
+			vacancy = 0;
+		} else {
+			vacancy = (double) restSpace/allSpace;
+		}
+		return vacancy;
+	}
 }

@@ -98,8 +98,7 @@ public class ParkingLotTest {
 		assertSame(car, extractcar);
 	}
 	
-	
-	/*@Test
+	@Test
 	public void super_parkingboy_should_park_the_car_in_sequence_of_parkinglot_and_can_take_the_parked_car() {
 		List<ParkingLot> parkingLots = new ArrayList<ParkingLot>();
 		int restSpaceOfParkingLotA = 2;
@@ -113,11 +112,11 @@ public class ParkingLotTest {
 		parkingLots.add(parkingLotB);
 		parkingLots.add(parkingLotC);
 		Car car = new Car();
-		SuperParkingBoy superParkingBoy = new SuperParkingBoy();
+		SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkingLots);
 		
-		Ticket ticket = smartParkingBoy.parking(car);
-		Car extractcar = smartParkingBoy.takeCar(ticket);
+		Ticket ticket = superParkingBoy.parking(car);
+		Car extractcar = superParkingBoy.takeCar(ticket);
 		assertEquals(car, extractcar);
 		assertSame(car, extractcar);
-	}*/
+	}
 }

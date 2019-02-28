@@ -15,8 +15,7 @@ public class SmartParkingBoy {
 	public Ticket parking(Car car) {
 		if (parkingLots != null && !parkingLots.isEmpty()) {
 			return parkingCarInMostSpace(parkingLots, car);
-		}
-		else {
+		} else {
 			throw new ParkingFailedException();
 		}
 	}
